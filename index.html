@@ -62,8 +62,44 @@
       border: none;
       border-radius: 5px;
       margin-top: 1.5rem;
-      text-decoration: none;
       font-size: 1rem;
+      cursor: pointer;
+    }
+    .popup, .payment-modal {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: rgba(255,255,255,0.95);
+      border-radius: 10px;
+      padding: 2rem;
+      text-align: center;
+      box-shadow: 0 0 20px rgba(0,0,255,0.4);
+      display: none;
+      z-index: 999;
+    }
+    .popup h2, .payment-modal h3 {
+      color: #0057b8;
+      margin-bottom: 1rem;
+    }
+    .popup button, .payment-modal button {
+      margin-top: 1rem;
+      background: #0057b8;
+      color: white;
+      padding: 0.5rem 1.2rem;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.6);
+      display: none;
+      z-index: 998;
     }
     .section {
       padding: 2rem;
@@ -92,15 +128,6 @@
       text-align: center;
       padding: 1rem;
     }
-    .paynow-btn {
-      display: inline-block;
-      margin-top: 2rem;
-    }
-    @media (max-width: 600px) {
-      .hero h1 {
-        font-size: 2rem;
-      }
-    }
   </style>
 </head>
 <body>
@@ -118,8 +145,8 @@
 
   <section class="hero">
     <h1>Affordable Websites for Zimbabwean Businesses</h1>
-    <p>Get online with a beautiful, mobile-friendly site for just $30</p>
-    <a class="btn" href="contact.html">Get Your Website</a>
+    <p>Get your professional website now – only $30</p>
+    <button class="btn" onclick="showPayment()">Buy Now</button>
   </section>
 
   <section class="section">
@@ -135,21 +162,57 @@
       </div>
       <div class="service-box">
         <h3>Local Pricing</h3>
-        <p>Only $30 – Pay via EcoCash or ZIPIT</p>
+        <p>Only $30 – Pay via EcoCash or Inbucks</p>
       </div>
     </div>
   </section>
 
-  <section class="paynow-btn">
-    <a href="https://www.paynow.co.zw/Payment/Link/?q=c2VhcmNoPWFuZXN1ZWxzaGE0JTQwZ21haWwuY29tJmFtb3VudD01MDAuMDAmcmVmZXJlbmNlPTEyMjIzNDMyJmw9MQ%3d%3d" target="_blank">
-      <img src="https://www.paynow.co.zw/Content/Buttons/Medium_buttons/button_pay-now_medium.png" style="border:0" alt="Pay Now Button"/>
-    </a>
-  </section>
+  <div class="overlay" id="overlay"></div>
+
+  <div class="popup" id="promoPopup">
+    <h2>🔥 Get Your Professional Website Now!</h2>
+    <p>Stand out with a custom-built website – Ready in 3 days.</p>
+    <button onclick="closePopup()">Close</button>
+  </div>
+
+  <div class="payment-modal" id="paymentModal">
+    <h3>Select Payment Method</h3>
+    <p>Choose EcoCash or Inbucks and enter your PIN</p>
+    <select>
+      <option>EcoCash</option>
+      <option>Inbucks</option>
+    </select><br/><br/>
+    <input type="password" placeholder="Enter PIN" /><br/>
+    <button onclick="confirmPayment()">Confirm</button>
+  </div>
 
   <footer>
     <p>Contact: anesuelsha4@gmail.com | WhatsApp: +263 787 260 086</p>
     <p>&copy; 2025 ZimWebPro</p>
   </footer>
+
+  <script>
+    window.onload = function() {
+      document.getElementById('promoPopup').style.display = 'block';
+      document.getElementById('overlay').style.display = 'block';
+    }
+
+    function closePopup() {
+      document.getElementById('promoPopup').style.display = 'none';
+      document.getElementById('overlay').style.display = 'none';
+    }
+
+    function showPayment() {
+      document.getElementById('paymentModal').style.display = 'block';
+      document.getElementById('overlay').style.display = 'block';
+    }
+
+    function confirmPayment() {
+      alert("Payment Successful! You'll be contacted shortly.");
+      document.getElementById('paymentModal').style.display = 'none';
+      document.getElementById('overlay').style.display = 'none';
+    }
+  </script>
 
 </body>
 </html>
