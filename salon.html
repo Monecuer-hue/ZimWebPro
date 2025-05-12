@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Salon Website</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f4f4f9;
+      margin: 0;
+      padding: 0;
+      color: #333;
+    }
+    header {
+      background-color: #d32f2f;
+      color: white;
+      text-align: center;
+      padding: 2rem;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    header h1 {
+      margin: 0;
+      font-size: 3rem;
+      text-transform: uppercase;
+    }
+    .hero {
+      background-image: url('https://img.freepik.com/free-photo/portrait-gorgeous-woman-holding-eyeshadow-palette_23-2149206658.jpg?uid=R187407010&ga=GA1.1.499621401.1745478982&semt=ais_hybrid&w=740');
+      background-size: cover;
+      background-position: center;
+      height: 400px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: white;
+      font-size: 2.5rem;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    }
+    .services {
+      display: flex;
+      justify-content: center;
+      gap: 3rem;
+      margin: 4rem 0;
+      padding: 0 2rem;
+    }
+    .service-box {
+      background-color: white;
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease-in-out, box-shadow 0.3s ease;
+      width: 250px;
+      text-align: center;
+    }
+    .service-box:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+    }
+    .service-box h3 {
+      color: #d32f2f;
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+    }
+    .service-box p {
+      font-size: 1rem;
+      color: #555;
+    }
+    .cta-btn {
+      display: inline-block;
+      background-color: #d32f2f;
+      color: white;
+      padding: 1rem 2rem;
+      text-decoration: none;
+      font-size: 1.2rem;
+      border-radius: 30px;
+      margin-top: 2rem;
+      transition: background-color 0.3s ease;
+    }
+    .cta-btn:hover {
+      background-color: #b71c1c;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Salon Glamour</h1>
+  </header>
+
+  <section class="hero">
+    <h2>Welcome to Salon Glamour</h2>
+   <div> <h3>Your beauty, our priority</h3></div>
+  </section>
+
+  <section class="services">
+    <div class="service-box">
+      <h3>Haircuts</h3>
+      <p>Expert haircuts to fit your style</p>
+    </div>
+    <div class="service-box">
+      <h3>Facials</h3>
+      <p>Relax with rejuvenating facials</p>
+    </div>
+    <div class="service-box">
+      <h3>Manicures</h3>
+      <p>Beautiful nails every time</p>
+    </div>
+  </section>
+
+  <footer style="text-align:center; margin-top: 4rem;">
+    <a href="portfolio.html" class="cta-btn">View Our Portfolio</a>
+  </footer>
+
+</body>
+</html>
