@@ -1,8 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="description" content="ZimWebPro offers affordable websites for Zimbabwean businesses. Check out our school, shop, restaurant, and law firm demo sites.">
+<meta name="keywords" content="ZimWebPro, Zimbabwe websites, affordable web design, EcoCash, web development Zimbabwe, digital portfolio">
+<meta name="author" content="Elshaddai Anesu Mugugu">
+<meta property="og:title" content="ZimWebPro | Web Design for Zimbabwe">
+<meta property="og:description" content="See professional demo websites for local businesses in Zimbabwe. School, boutique, construction, food & more.">
+<meta property="og:image" content="https://zimwebpro.netlify.app/preview.png">
+<meta property="og:url" content="https://zimwebpro.netlify.app/">
+
   <title>ZimWebPro | Affordable Web Design in Zimbabwe</title>
   <style>
     * {
@@ -187,6 +193,54 @@
     <a href="tel:*151*263776880048*30#">Pay EcoCash</a>
     <a href="https://wa.me/263776880048?text=Hi%2C+I+want+to+book+a+website+from+ZimWebPro">Book on WhatsApp</a>
   </div>
+<!-- Buy Now Button -->
+<button onclick="showPaymentPopup()" style="
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #28a745;
+  color: white;
+  border: none;
+  padding: 1rem 1.5rem;
+  font-size: 16px;
+  border-radius: 30px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+  cursor: pointer;
+  z-index: 9999;
+">Buy Now</button>
 
+<!-- Payment Popup -->
+<div id="paymentPopup" style="display:none; position:fixed; top:0; left:0; right:0; bottom:0; background:rgba(0,0,0,0.7); z-index:9999; align-items:center; justify-content:center;">
+  <div style="background:white; padding:2rem; border-radius:10px; text-align:center; width:90%; max-width:400px;">
+    <h3>Confirm Payment</h3>
+    <p>Send $10 to:</p>
+    <p><strong>EcoCash: +263 787 260 086</strong></p>
+    <input type="password" placeholder="Enter PIN" id="pinInput" style="padding:10px; width:80%; margin:1rem 0;" />
+    <br/>
+    <button onclick="confirmPIN()" style="padding:0.6rem 1.2rem; background:#0057b8; color:white; border:none; border-radius:5px;">Confirm</button>
+    <br/><br/>
+    <button onclick="hidePopup()" style="background:none; border:none; color:#888;">Cancel</button>
+  </div>
+</div>
+
+<script>
+  function showPaymentPopup() {
+    document.getElementById('paymentPopup').style.display = 'flex';
+  }
+
+  function hidePopup() {
+    document.getElementById('paymentPopup').style.display = 'none';
+  }
+
+  function confirmPIN() {
+    let pin = document.getElementById('pinInput').value;
+    if (pin.length >= 4) {
+      alert("PIN accepted! We'll contact you via WhatsApp.");
+      window.location.href = "https://wa.me/263787260086?text=Hi%20ZimWebPro%2C%20I%20just%20made%20a%20payment!";
+    } else {
+      alert("Please enter a valid 4-digit PIN.");
+    }
+  }
+</script>
 </body>
 </html>
