@@ -14,9 +14,9 @@
     }
     .hero {
       position: relative;
-      background: url("https://img.freepik.com/premium-photo/person-using-keyboard-computer-laptop-digital-technology-top-view-desk_55997-4144.jpg") no-repeat center center/cover;
+      background: url("https://img.freepik.com/premium-photo/person-using-keyboard-computer-laptop-digital-technology-top-view-desk_55997-4144.jpg") center/cover no-repeat;
       height: 50vh;
-      color: #fff;
+      color: #f8f9fa;
       text-align: center;
     }
     .hero::after {
@@ -37,24 +37,23 @@
       background-color: #007a2b;
       border-color: #007a2b;
     }
-    .counter-section {
-      background-color: #fff;
-      padding: 60px 0;
-    }
     .counter {
       font-size: 2.5rem;
       font-weight: bold;
       color: #009739;
     }
-    .counter-label {
-      font-size: 1.2rem;
+    .toast-container {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: 9999;
     }
   </style>
 </head>
 <body>
 
 <!-- Navbar -->
-<nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
+<nav class="navbar navbar-expand-lg navbar-light shadow-sm bg-white">
   <div class="container">
     <a class="navbar-brand" href="index.html">ZimWebPro</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
@@ -137,27 +136,34 @@
   </div>
 </section>
 
-<!-- Stats Section -->
-<section class="counter-section text-center">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-3" data-aos="fade-up">
-        <div class="counter" data-count="250">0</div>
-        <div class="counter-label">Happy Clients</div>
+<!-- Counter Section -->
+<section class="py-5 text-center bg-white">
+  <div class="container" data-aos="fade-up">
+    <h2 class="mb-4">Happy Clients</h2>
+    <div class="counter" id="happyClients">0</div>
+  </div>
+</section>
+
+<!-- Payment Section -->
+<section class="py-5 text-center">
+  <div class="container" data-aos="fade-up">
+    <h2 class="mb-4">Make a Payment</h2>
+    <p class="mb-4">Choose a method and support our services easily.</p>
+    <form id="paymentForm" class="row g-2 justify-content-center">
+      <div class="col-md-3">
+        <select class="form-select" id="paymentMethod" required>
+          <option value="" disabled selected>Select Payment Method</option>
+          <option value="inbucks">Inbucks</option>
+          <option value="ecocash">EcoCash</option>
+        </select>
       </div>
-      <div class="col-md-3" data-aos="fade-up" data-aos-delay="100">
-        <div class="counter" data-count="320">0</div>
-        <div class="counter-label">Websites Built</div>
+      <div class="col-md-3">
+        <input type="number" class="form-control" id="amount" placeholder="Enter amount" required>
       </div>
-      <div class="col-md-3" data-aos="fade-up" data-aos-delay="200">
-        <div class="counter" data-count="50">0</div>
-        <div class="counter-label">Business Niches</div>
+      <div class="col-md-2">
+        <button type="submit" class="btn btn-primary w-100">Pay Now</button>
       </div>
-      <div class="col-md-3" data-aos="fade-up" data-aos-delay="300">
-        <div class="counter" data-count="100">0</div>
-        <div class="counter-label">4-Star Reviews</div>
-      </div>
-    </div>
+    </form>
   </div>
 </section>
 
@@ -188,75 +194,66 @@
       </div>
     </div>
   </div>
-
-  <!-- Payment Form -->
-  <section class="py-5 text-center">
-    <div class="container" data-aos="fade-up">
-      <h2 class="mb-4">Make a Payment</h2>
-      <p class="mb-4">Choose a method and support our services easily.</p>
-      <form id="paymentForm" class="row g-2 justify-content-center">
-        <div class="col-md-3">
-          <select class="form-select" id="paymentMethod" required>
-            <option value="" disabled selected>Select Payment Method</option>
-            <option value="inbucks">Inbucks</option>
-            <option value="ecocash">EcoCash</option>
-          </select>
-        </div>
-        <div class="col-md-3">
-          <input type="number" class="form-control" id="amount" placeholder="Enter amount" required>
-        </div>
-        <div class="col-md-2">
-          <button type="submit" class="btn btn-primary w-100">Pay Now</button>
-        </div>
-      </form>
-    </div>
-  </section>
 </footer>
+
+<!-- Toast Popup -->
+<div class="toast-container">
+  <div class="toast align-items-center text-white bg-success border-0 show">
+    <div class="d-flex">
+      <div class="toast-body">These are professionals.</div>
+      <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"></button>
+    </div>
+  </div>
+</div>
 
 <!-- Scripts -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
 <script>
   AOS.init({ duration: 800, once: true });
-
-  // Payment form
+</script>
+<script>
   document.getElementById('paymentForm').addEventListener('submit', function(e) {
     e.preventDefault();
     const method = document.getElementById('paymentMethod').value;
     const amount = document.getElementById('amount').value;
     const phone = '0789992789';
     let ussdCode = '';
-
     if (method === 'inbucks') {
-      ussdCode = `*569*${amount}#`;
+      ussdCode = `*569#`;
     } else if (method === 'ecocash') {
       ussdCode = `*153*1*1*${phone}*${amount}#`;
     }
-
     if (ussdCode) {
       window.location.href = `tel:${encodeURIComponent(ussdCode)}`;
     }
   });
 
-  // Counter Animation
-  const counters = document.querySelectorAll('.counter');
-  const speed = 200;
-
-  counters.forEach(counter => {
-    const updateCount = () => {
-      const target = +counter.getAttribute('data-count');
-      const count = +counter.innerText;
-
-      const increment = target / speed;
-
-      if (count < target) {
-        counter.innerText = Math.ceil(count + increment);
-        setTimeout(updateCount, 20);
+  // Scroll-activated counter
+  let animated = false;
+  function animateCounter(id, target) {
+    let element = document.getElementById(id);
+    let count = 0;
+    let interval = setInterval(() => {
+      if (count >= target) {
+        clearInterval(interval);
       } else {
-        counter.innerText = target;
+        count += 1;
+        element.textContent = count;
       }
-    };
-    updateCount();
+    }, 20);
+  }
+
+  window.addEventListener('scroll', () => {
+    const el = document.getElementById("happyClients");
+    const rect = el.getBoundingClientRect();
+    if (rect.top >= 0 && rect.bottom <= window.innerHeight && !animated) {
+      animated = true;
+      animateCounter("happyClients", 50); // change number as needed
+    } else if (rect.bottom < 0 || rect.top > window.innerHeight) {
+      animated = false;
+      document.getElementById("happyClients").textContent = "0";
+    }
   });
 </script>
 
