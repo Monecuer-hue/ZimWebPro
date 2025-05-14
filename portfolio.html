@@ -1,93 +1,166 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta name="description" content="ZimWebPro offers affordable websites for Zimbabwean businesses. Check out our school, shop, restaurant, and law firm demo sites.">
-<meta name="keywords" content="ZimWebPro, Zimbabwe websites, affordable web design, EcoCash, web development Zimbabwe, digital portfolio">
-<meta name="author" content="Elshaddai Anesu Mugugu">
-<meta property="og:title" content="ZimWebPro | Web Design for Zimbabwe">
-<meta property="og:description" content="See professional demo websites for local businesses in Zimbabwe. School, boutique, construction, food & more.">
-<meta property="og:image" content="https://zimwebpro.netlify.app/preview.png">
-<meta property="og:url" content="https://zimwebpro.netlify.app/">
-  <title>ZimWebPro | Portfolio</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ZimWebPro — Portfolio</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <style>
-    body { font-family: 'Segoe UI', sans-serif; margin: 0; background: #f5f7fa; color: #333; }
-    header, footer { background: #0057b8; color: white; padding: 1.2rem; text-align: center; }
-    nav a { color: #fff; margin: 0 1rem; text-decoration: none; font-weight: bold; }
-    h2 { text-align: center; color: #0057b8; margin-top: 2rem; }
-    .portfolio-container { display: flex; flex-wrap: wrap; justify-content: center; padding: 2rem; gap: 2rem; }
-    .project-card { background: white; box-shadow: 0 2px 6px rgba(0,0,0,0.1); border-radius: 10px; max-width: 300px; padding: 1rem; text-align: center; }
-    .project-card img { width: 100%; border-radius: 8px; }
-    .project-card h3 { margin-top: 1rem; }
-    .view-btn {
-      background-color: #0057b8;
-      color: white;
-      border: none;
-      padding: 0.8rem 1.5rem;
-      border-radius: 20px;
-      cursor: pointer;
-      margin-top: 1rem;
-      text-decoration: none;
-      display: inline-block;
+    :root {
+      --zim-green: #009739;
+      --zim-gold: #FFD700;
     }
-    .view-btn:hover {
-      background-color: #004494;
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #f8f9fa;
+      margin: 0;
+    }
+    .navbar {
+      background-color: var(--zim-green);
+    }
+    .navbar .navbar-brand, .navbar .nav-link {
+      color: #fff !important;
+    }
+    .navbar .nav-link:hover {
+      color: var(--zim-gold) !important;
+    }
+    .portfolio-section {
+      padding: 4rem 0;
+    }
+    .card-title {
+      font-weight: 600;
+    }
+    .btn-view {
+      background-color: var(--zim-green);
+      border-color: var(--zim-green);
+    }
+    .btn-view:hover {
+      background-color: #007a2b;
+      border-color: #007a2b;
     }
   </style>
 </head>
 <body>
 
-  <header>
-    <h1>ZimWebPro</h1>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="portfolio.html">Portfolio</a>
-      <a href="pricing.html">Pricing</a>
-      <a href="contact.html">Contact</a>
-    </nav>
-  </header>
-
-  <h2>My Sample Projects</h2>
-  <div class="portfolio-container">
-    <div class="project-card">
-      <img src="https://img.freepik.com/premium-photo/african-american-makeup-instructor-with-case-her-equipment_161094-3179.jpg" alt="Salon Site" />
-      <h3>Salon Website</h3>
-      <a href="salon.html" class="view-btn">View Portfolio</a>
-    </div>
-    <div class="project-card">
-      <img src="https://img.freepik.com/free-photo/person-shopping-second-hand-market_23-2149353675.jpg" alt="Shop Site" />
-      <h3>Retail Shop Website</h3>
-      <a href="retail.html" class="view-btn">View Portfolio</a>
-    </div>
-    <div class="project-card">
-      <img src="https://img.freepik.com/free-photo/vertical-shot-church-with-blue-cloudy-sky-background_181624-9309.jpg" alt="Church Site" />
-      <h3>Church Website</h3>
-      <a href="church.html" class="view-btn">View Portfolio</a>
-    </div>
-    <div class="project-card">
-      <img src="https://img.freepik.com/free-photo/sunny-urban-landscape_23-2149504779.jpg" alt="School Site" />
-      <h3>School Website</h3>
-      <a href="/chifamba-high-school/index.html" class="view-btn">View Portfolio</a>
-    </div>
-    <div class="project-card">
-      <img src="https://img.freepik.com/free-photo/laptop-shopping-bags-online-shopping-concept_1423-190.jpg" alt="E-commerce Site" />
-      <h3>Mugugu Boutique</h3>
-      <a href="/mugugu-boutique/index.html" class="view-btn">View Portfolio</a>
-    </div>
-    <div class="project-card">
-      <img src="https://img.freepik.com/free-photo/street-food-still-life_23-2151535228.jpg" alt="FastFood Site" />
-      <h3>FastFood Express</h3>
-      <a href="/fastfood-express/index.html" class="view-btn">View Portfolio</a>
-    </div>
-    <div class="project-card">
-      <img src="https://img.freepik.com/free-photo/silhouettes-construction-workers_53876-138060.jpg" alt="Construction" />
-      <h3>Chihava Construction</h3>
-      <a href="/chihava-construction/index.html" class="view-btn">View Portfolio</a>
+<nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+  <div class="container">
+    <a class="navbar-brand" href="index.html">ZimWebPro</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMain">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navMain">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link active" href="portfolio.html">Portfolio</a></li>
+        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+      </ul>
     </div>
   </div>
-  <footer>
-    <p>anesuelsha4@gmail.com | WhatsApp: +263 787 260 086</p>
-    <p>&copy; 2025 ZimWebPro</p>
-  </footer>
+</nav>
 
+<section class="portfolio-section">
+  <div class="container">
+    <h2 class="text-center mb-5">Our Portfolio</h2>
+    <div class="row g-4">
+      
+      <div class="col-md-4">
+        <div class="card h-100 shadow-sm">
+          <img src="https://img.freepik.com/free-photo/woman-getting-treatment-hairdresser-shop_23-2149229759.jpg?uid=R187407010&ga=GA1.1.499621401.1745478982&semt=ais_hybrid&w=740" class="card-img-top" alt="Salon Glamour">
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title">Salon Glamour</h5>
+            <p class="card-text flex-grow-1">Elegant, responsive website for beauty salons with booking integration.</p>
+            <a href="salon.html" class="btn btn-view mt-3">View Details</a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-md-4">
+        <div class="card h-100 shadow-sm">
+          <img src="https://img.freepik.com/free-photo/cute-little-girl-supermarket_1157-21969.jpg?uid=R187407010&ga=GA1.1.499621401.1745478982&semt=ais_hybrid&w=740" class="card-img-top" alt="Retail Shop">
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title">Retail Shop</h5>
+            <p class="card-text flex-grow-1">Modern e-commerce site with product catalog and secure checkout.</p>
+            <a href="retail-shop.html" class="btn btn-view mt-3">View Details</a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-md-4">
+        <div class="card h-100 shadow-sm">
+          <img src="https://img.freepik.com/free-photo/vertical-shot-church-with-blue-cloudy-sky-background_181624-9309.jpg?uid=R187407010&ga=GA1.1.499621401.1745478982&semt=ais_hybrid&w=740" class="card-img-top" alt="Grace Church">
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title">Grace Church</h5>
+            <p class="card-text flex-grow-1">Community-focused church site with sermon archive and events calendar.</p>
+            <a href="church.html" class="btn btn-view mt-3">View Details</a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-md-4">
+        <div class="card h-100 shadow-sm">
+          <img src="https://img.freepik.com/premium-photo/judge-s-gavel-black_93675-43549.jpg?uid=R187407010&ga=GA1.1.499621401.1745478982&semt=ais_hybrid&w=740" class="card-img-top" alt="Law Firm">
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title">Mapeyanei & Associates</h5>
+            <p class="card-text flex-grow-1">Professional law firm site showcasing practice areas and attorney profiles.</p>
+            <a href="law-firm.html" class="btn btn-view mt-3">View Details</a>
+          </div>
+        </div>
+      </div>
+      
+      
+      
+      <div class="col-md-4">
+        <div class="card h-100 shadow-sm">
+          <img src="https://img.freepik.com/free-photo/city-building-with-reflection_23-2148107129.jpg?uid=R187407010&ga=GA1.1.499621401.1745478982&semt=ais_hybrid&w=740" class="card-img-top" alt="Chifamba High School">
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title">Chifamba High School</h5>
+            <p class="card-text flex-grow-1">Educational site with news, events calendar, and gallery.</p>
+            <a href="chifamba-high-school.html" class="btn btn-view mt-3">View Details</a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-md-4">
+        <div class="card h-100 shadow-sm">
+          <img src="IMG_1167.JPG" class="card-img-top" alt="Mugugu Boutique">
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title">Mugugu Boutique</h5>
+            <p class="card-text flex-grow-1">Chic boutique site with product grid and WhatsApp ordering.</p>
+            <a href="mugugu-boutique.html" class="btn btn-view mt-3">View Details</a>
+          </div>
+        </div>
+      </div>
+    
+        
+      <div class="col-md-4">
+        <div class="card h-100 shadow-sm">
+          <img src="https://img.freepik.com/free-photo/view-delicious-burger-with-buns-cheese_23-2150887822.jpg?uid=R187407010&ga=GA1.1.499621401.1745478982&semt=ais_hybrid&w=740" class="card-img-top" alt="School Portfolio">
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title">FastFood Express</h5>
+            <p class="card-text flex-grow-1">Fast-food site demo with menu, ordering, and location info.</p>
+            <a href="fastfood-express.html" class="btn btn-view mt-3">View Details</a>
+          </div>
+        </div>
+      </div>
+
+        
+      <div class="col-md-4">
+        <div class="card h-100 shadow-sm">
+          <img src="https://img.freepik.com/premium-photo/construction-building-project-engineer-team-talking-planning-vision-architecture-black-woman-man-together-site-management-engineering-safety-assessment-outdoor-city_590464-178827.jpg?uid=R187407010&ga=GA1.1.499621401.1745478982&semt=ais_hybrid&w=740" class="card-img-top" alt="School Portfolio">
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title">Chihava Construction</h5>
+            <p class="card-text flex-grow-1">Construction Team,Making you vision come to reality.</p>
+            <a href="chihava-construction.html" class="btn btn-view mt-3">View Details</a>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</section>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

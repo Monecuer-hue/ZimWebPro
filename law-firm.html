@@ -1,38 +1,156 @@
+<!-- law.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta name="description" content="ZimWebPro offers affordable websites for Zimbabwean businesses. Check out our school, shop, restaurant, and law firm demo sites.">
-<meta name="keywords" content="ZimWebPro, Zimbabwe websites, affordable web design, EcoCash, web development Zimbabwe, digital portfolio">
-<meta name="author" content="Elshaddai Anesu Mugugu">
-<meta property="og:title" content="ZimWebPro | Web Design for Zimbabwe">
-<meta property="og:description" content="See professional demo websites for local businesses in Zimbabwe. School, boutique, construction, food & more.">
-<meta property="og:image" content="https://zimwebpro.netlify.app/preview.png">
-<meta property="og:url" content="https://zimwebpro.netlify.app/">
-
-<title>Law Firm Website | ZimWebPro</title>
-<style>
-body{margin:0;font-family:'Segoe UI',sans-serif;background:#f4f4f4}
-header{background:#0057b8;color:white;text-align:center;padding:1.2rem}
-.hero{background:url('https://img.freepik.com/premium-photo/judge-gavel-with-justice-lawyers-office-background_488220-40794.jpg') no-repeat center/cover;
-height:280px;display:flex;align-items:center;justify-content:center;color:white;text-shadow:1px 1px 4px black}
-.hero h1{font-size:3rem}
-.content{max-width:900px;margin:2rem auto;background:white;padding:2rem;
-box-shadow:0 2px 6px rgba(0,0,0,0.1);border-radius:12px}
-.back-btn{display:inline-block;margin-top:2rem;background:#0057b8;color:white;
-padding:0.7rem 1.5rem;border-radius:25px;text-decoration:none}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Law Firm - ZimWebPro Portfolio</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- AOS CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <style>
+    :root {
+      --zim-green: #009739;
+      --zim-gold: #FFD700;
+    }
+    body {
+      font-family: Arial, sans-serif;
+    }
+    /* Navbar style */
+    .navbar {
+      background-color: var(--zim-green) !important;
+    }
+    .navbar .navbar-brand, .navbar .nav-link {
+      color: #fff !important;
+    }
+    .navbar .nav-link:hover {
+      color: var(--zim-gold) !important;
+    }
+    /* Hero Banner */
+    .hero {
+      position: relative;
+      background-image: url('https://cdn.pixabay.com/photo/2017/09/07/01/16/justitia-2723660_1280.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      height: 60vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      text-align: center;
+    }
+    .hero-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+    }
+    .hero-content {
+      position: relative;
+      z-index: 1;
+    }
+    /* Section headings */
+    .section-title {
+      margin: 2rem 0 1rem;
+      text-align: center;
+    }
+    /* Project highlights list */
+    .features-list {
+      list-style: none;
+      padding-left: 0;
+    }
+    .features-list li::before {
+      content: "✓ ";
+      color: var(--zim-green);
+      font-weight: bold;
+    }
+    /* Contact form */
+    .contact-section {
+      padding: 2rem 0;
+    }
+    .contact-section .form-control {
+      margin-bottom: 1rem;
+    }
+    .btn-primary {
+      background-color: var(--zim-green);
+      border-color: var(--zim-green);
+    }
+    .btn-primary:hover {
+      background-color: #007a2b;
+      border-color: #007a2b;
+    }
+  </style>
 </head>
 <body>
-<header><h2>ZimWebPro - Legal Website Demo</h2></header>
-<div class="hero"><h1>Fast Justice Law</h1></div>
-<div class="content">
-<p>This is a law firm demo website for professional legal practices. Includes:</p>
-<ul>
-<li>Attorney profiles</li>
-<li>Legal services list</li>
-<li>Call or message button</li>
-</ul>
-<a class="back-btn" href="../portfolio.html">← Back to Portfolio</a>
+
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-dark">
+  <div class="container">
+    <a class="navbar-brand" href="#">ZimWebPro</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="portfolio.html">Portfolio</a></li>
+        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Hero Section -->
+<section class="hero">
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <h1 class="display-4" data-aos="fade-down">Mapeyanei & Associates Law Firm</h1>
+    <p class="lead" data-aos="fade-up">Committed to justice and excellence</p>
+  </div>
+</section>
+
+<!-- About/Services Section -->
+<div class="container my-5">
+  <h2 class="section-title" data-aos="fade-up">About Our Law Firm</h2>
+  <p data-aos="fade-up" data-aos-delay="100">Mapeyanei & Associates is a premier law firm offering comprehensive legal services in various fields such as corporate law, family law, and civil rights. Our experienced attorneys are dedicated to delivering justice and personalized service to each client, upholding integrity and professionalism in every case.</p>
+
+  <h3 class="mt-4" data-aos="fade-up" data-aos-delay="200">Project Highlights</h3>
+  <ul class="features-list mt-3" data-aos="fade-up" data-aos-delay="300">
+    <li>Experienced attorneys with a proven track record</li>
+    <li>Personalized client-focused approach</li>
+    <li>Comprehensive legal expertise across multiple practice areas</li>
+    <li>Commitment to integrity, professionalism, and results</li>
+  </ul>
 </div>
+
+<!-- Contact Section -->
+<section id="contact" class="contact-section bg-light">
+  <div class="container">
+    <h2 class="section-title" data-aos="fade-up">Contact Us</h2>
+    <p class="text-center mb-4" data-aos="fade-up" data-aos-delay="100">Ready to discuss your legal needs? Reach out to Mapeyanei & Associates today.</p>
+    <div class="row justify-content-center">
+      <div class="col-md-6" data-aos="fade-up" data-aos-delay="200">
+        <form>
+          <input type="text" class="form-control" placeholder="Name" required>
+          <input type="email" class="form-control" placeholder="Email" required>
+          <textarea class="form-control" rows="5" placeholder="Message" required></textarea>
+          <button type="submit" class="btn btn-primary w-100 mt-3">Send Message</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Bootstrap JS & AOS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init();
+</script>
 </body>
 </html>
