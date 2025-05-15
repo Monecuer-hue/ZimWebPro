@@ -361,6 +361,64 @@
       }, 3000);
     });
   </script>
+  <!-- View Portfolio Banner -->
+<div id="topBanner" style="position: fixed; top: 0; width: 100%; background: #009739; color: white; text-align: center; padding: 8px 0; z-index: 10000;">
+  👀 View Our Portfolios – <a href="portfolio.html" style="color: #fff; text-decoration: underline;">Click Here</a>
+</div>
+
+<script>
+  // Counter Animation & Scroll Triggered Popup
+  let hasCounted = false;
+  const counter = document.querySelector('.counter');
+  const popup = document.getElementById('portfolioPopup');
+
+  function animateCount() {
+    const target = +counter.getAttribute('data-target');
+    const speed = 200;
+    const increment = Math.ceil(target / speed);
+
+    let count = 0;
+    const update = () => {
+      count += increment;
+      if (count >= target) {
+        counter.textContent = target;
+      } else {
+        counter.textContent = count;
+        requestAnimationFrame(update);
+      }
+    };
+    update();
+  }
+
+  function isInViewport(el) {
+    const rect = el.getBoundingClientRect();
+    return rect.top <= window.innerHeight && rect.bottom >= 0;
+  }
+
+  function handleScroll() {
+    if (!hasCounted && isInViewport(counter)) {
+      animateCount();
+      popup.innerHTML = "<strong>🎯 These are professionals!</strong><br/>Get yours now!<br/><button onclick=\"window.location.href='portfolio.html'\">View Portfolio</button>";
+      popup.style.display = 'block';
+      hasCounted = true;
+    }
+  }
+
+  window.addEventListener('scroll', handleScroll);
+</script>
+  <div id="portfolioPopup" style="display: none; position: fixed; bottom: 20px; right: 20px; background: #fff; padding: 10px; border-radius: 5px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); z-index: 10000;"></div>
+  <script>
+    // Show the loader overlay on page load
+    window.addEventListener('load', () => {
+      loaderOverlay.style.display = 'none';
+    });
+  </script>
+  <script>
+    // Hide the loader overlay after 3 seconds
+    setTimeout(() => {
+      loaderOverlay.style.display = 'none';
+    }, 8000);
+  </script>
 </body>
 </html>
 ```
